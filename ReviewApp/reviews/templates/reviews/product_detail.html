@@ -1,0 +1,11 @@
+{% extends "reviews/base.html" %}
+{% block content %}
+<h1>Product Details</h1>
+
+<div class="card">
+	<img src="{{ object.image.url }}" class="w-25">
+	<h2>{{ product.name }}</h2>
+	<p>{{ product.description }}</p>
+</div>
+
+{% endblock content %}

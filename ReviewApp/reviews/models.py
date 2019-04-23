@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Product(models.Model):
 	name = models.CharField(default ='', max_length = 255)
 	brand = models.CharField(default = '', max_length = 255)
-	avg_cost = models.DecimalField(default = 00.00, max_digits = 4, decimal_places = 2)
+	avg_cost = models.DecimalField(default = 000.00, max_digits = 5, decimal_places = 2)
 	category = models.CharField(default = '', max_length = 255)
 	date_released = models.DateField(default = timezone.now)
 	description = models.TextField()
