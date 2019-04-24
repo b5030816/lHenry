@@ -19,9 +19,11 @@ class Product(models.Model):
 
 class Review(models.Model):
 	author = models.ForeignKey(User, on_delete = models.CASCADE)
-	products = models.ForeignKey(Product, on_delete = models.CASCADE)
+	product = models.ForeignKey(Product, on_delete = models.CASCADE)
+	rating = models.IntegerField(default = 0, max_length = 5)
+	review_text = models.TextField()
 	review_text = models.TextField()
 	date = models.DateField(default = timezone.now)
 
 	def __str__(self):
-		return self.name
+		return f'The Review of {self .product.name}'

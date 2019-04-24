@@ -2,10 +2,26 @@
 {% block content %}
 <h1>Product Details</h1>
 
-<div class="card">
-	<img src="{{ object.image.url }}" class="w-25">
-	<h2>{{ product.name }}</h2>
-	<p>{{ product.description }}</p>
+<div>
+		<img src="{{ object.photo.url }}" width="250"></div>
+		<div class="col-md-9">
+		<h2 class="product-name mb-O">{{ object.name }}</h2>
+	<P>Brand: {{ product.brand }}</P>
+	<p>Description: {{ product.description }}</p>
+	<p>Category: {{ product.category }}</p>
+	<p>Average Cost:{{ product.avg_cost }}</p>
+	<p>Date Released: {{ product.date_released }}</p>
 </div>
+
+<h2> Product Reviews </h2>
+	<div>
+		{% for review in object.review_set.all %}
+		{{ review }}
+		<p>Author: {{ review.author }}</p>
+		<p>Rating: {{ review.rating }}</p>
+		<p>Review Text: {{ review.review_text }}</p>
+
+		{% endfor %}
+	</div>	
 
 {% endblock content %}
